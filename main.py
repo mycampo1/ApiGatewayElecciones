@@ -47,9 +47,9 @@ def middleware():
             response = validate_permissions(token, clean_path(request.path), request.method)
             if response.status_code != 200:
                 return jsonify(response.json()), response.status_code
-        else:
+        """else:
             return jsonify({"message":"Debes de iniciar sesion"}),401
-
+        """
 
 def validate_permissions(token, url, method):
     headers = {
